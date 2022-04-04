@@ -15,15 +15,21 @@ const TaskListComponent = ({
       return tasks.map((task: Task, index) => (
         <div
           key={`task${index}`}
-          className="bg-white w-[250px] px-2 py-2 rounded drop-shadow text-lg"
+          className="bg-white h-full w-[250px] flex justify-between rounded drop-shadow text-lg pl-2 overflow-hidden"
         >
-          <span className="font-bold">Tarefa</span>: {task.description}
-          <button
-            onClick={() => removeTask(task.id as string)}
-            className="bg-red-500 float-right h-8 w-8 text-white rounded"
-          >
-            X
-          </button>
+          <div className="py-2">
+            <p className="font-bold">Tarefa</p>
+            {task.description}
+          </div>
+
+          <div>
+            <button
+              onClick={() => removeTask(task.id as string)}
+              className="bg-red-500 w-8 text-white  h-full"
+            >
+              X
+            </button>
+          </div>
         </div>
       ));
     };

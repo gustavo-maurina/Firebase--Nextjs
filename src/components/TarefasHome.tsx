@@ -40,17 +40,17 @@ export const TarefasHome = ({ tasks }: { tasks: any[] }) => {
     <div className="bg-indigo-100 h-screen w-screen grid place-items-center">
       <div className="flex flex-col gap-8 items-center">
         <p className="text-5xl font-bold">Minhas tarefas</p>
-        <div className="flex items-center">
+        <div className="flex items-center rounded overflow-hidden drop-shadow">
           <input
             onInput={({ currentTarget }) =>
               setTaskDescription(currentTarget.value)
             }
             placeholder="Nova tarefa..."
-            className="px-2 w-[250px] h-8 mr-2 drop-shadow"
+            className="px-2 w-[250px] h-10"
           />
           <button
             onClick={addTask}
-            className="text-3xl bg-blue-600 h-8 w-8 flex items-center justify-center pb-1 text-white rounded"
+            className="text-3xl bg-blue-600 w-10 flex items-center justify-center pb-1 text-white"
           >
             +
           </button>
