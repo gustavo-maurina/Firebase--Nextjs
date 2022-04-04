@@ -37,9 +37,9 @@ export const TarefasHome = ({ tasks }: { tasks: any[] }) => {
   };
 
   return (
-    <div className="bg-blue-100 h-screen w-screen grid place-items-center">
+    <div className="bg-indigo-100 h-screen w-screen grid place-items-center">
       <div className="flex flex-col gap-8 items-center">
-        <p className="text-4xl">Minhas tarefas</p>
+        <p className="text-5xl font-bold">Minhas tarefas</p>
         <div className="flex items-center">
           <input
             onInput={({ currentTarget }) =>
