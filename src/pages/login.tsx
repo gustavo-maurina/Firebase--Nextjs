@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useRouter } from "next/router";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { _auth } from "../utils/_firebase";
@@ -23,7 +23,14 @@ const Login = () => {
   const loginEmail = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(_auth, body.email, body.senha);
+      // console.log(
+      //   await signInWithEmailAndPassword(_auth, body.email, body.senha)
+      // );
+
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(_auth, provider).then((result) => {
+        console.log(result);
+      });
       router.push("/");
     } catch (err) {
       console.log(err);

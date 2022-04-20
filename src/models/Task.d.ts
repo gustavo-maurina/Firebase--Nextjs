@@ -1,5 +1,5 @@
 export interface Task {
   id?: string;
   description: string;
-  created_at: Date;
+  created_at: string | Date;
 }

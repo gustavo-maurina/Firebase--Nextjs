@@ -37,10 +37,10 @@ export const TarefasHome = ({ tasks }: { tasks: any[] }) => {
   };
 
   return (
-    <div className="bg-indigo-100 h-screen w-screen grid place-items-center">
-      <div className="flex flex-col gap-8 items-center">
-        <p className="text-5xl font-bold">Minhas tarefas</p>
-        <div className="flex items-center rounded overflow-hidden drop-shadow">
+    <div className="bg-indigo-100 h-screen w-screen relative">
+      <div className="flex flex-col gap-8 items-center justify-center h-full">
+        <p className="text-5xl font-bold drop-shadow pt-[5%]">Minhas tarefas</p>
+        <div className="flex items-center rounded overflow-hidden">
           <input
             onInput={({ currentTarget }) =>
               setTaskDescription(currentTarget.value)
