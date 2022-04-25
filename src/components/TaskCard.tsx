@@ -12,11 +12,13 @@ export const TaskCard = ({ task, removeTask }: TaskCardProps) => {
         <p className="font-bold">Tarefa</p>
         {task.description}
       </div>
-
       <div>
         <button
-          onClick={() => removeTask(task.id as string)}
-          className="bg-red-500 w-8 text-white  h-full"
+          onClick={(e) => {
+            e.stopPropagation();
+            removeTask(task.id as string);
+          }}
+          className="bg-red-500 w-8 text-white h-full"
         >
           X
         </button>
